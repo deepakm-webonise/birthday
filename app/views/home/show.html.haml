@@ -1,0 +1,47 @@
+.jumbotron
+  - if current_user
+  - else
+    = link_to "Login with Google+", "/auth/google_oauth2", id: "sign_in", class: 'btn btn-danger'
+  .todays
+    %a{href: '#','data-toggle'=>"collapse", 'data-target'=>"#demo"} Todays list
+    #demo.collapse.in
+      - @today.each do |u|
+        = u.name
+        %br
+  .tomorrows
+    %a{href: '#','data-toggle'=>"collapse", 'data-target'=>"#demo1"} Tomorrow list
+    #demo1.collapse
+      - @tomorrow.each do |u|
+        = u.name
+        %br
+  .this_week
+    %a{href: '#','data-toggle'=>"collapse", 'data-target'=>"#demo2"} This weeks list
+    #demo2.collapse
+      - @this_week.each do |u|
+        = u.name
+        %br
+  -#accordian.panel-group
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title
+          %a{href: "#collapseOne", 'data-toggle'=>"collapse", 'data-parent'=>"#accordion"}
+            Todays list
+      #collapseOne.panel-collapse.collapse.in
+        .panel-body
+          %p HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages.
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title
+          %a{href: "#collapseTwo", 'data-toggle'=>"collapse", 'data-parent'=>"#accordion"}
+            Todays list
+      #collapseTwo.panel-collapse.collapse
+        .panel-body
+          %p HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages.
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title
+          %a{href: "#collapseThree", 'data-toggle'=>"collapse", 'data-parent'=>"#accordion"}
+            Todays Birthday
+      #collapseThree.panel-collapse.collapse
+        .panel-body
+          %p HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages.

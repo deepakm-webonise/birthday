@@ -1,0 +1,28 @@
+$screen-xs-max: 480px
+$screen-sm-min: 768px
+$screen-sm-max: ($screen-sm-min - 1)
+$screen-md-min: 992px
+$screen-md-max: ($screen-md-min - 1)
+$screen-lg-min: 1200px
+
+a.unstyled
+  text-decoration: none
+  &:hover
+    text-decoration: none
+
+.nav
+  li
+    a.no-padding
+      padding: 10px 0
+
+// Extra small devices (phones, less than 768px) */
+@media (max-width: $screen-xs-max)
+
+// Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+// Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min)  and (max-width: $screen-md-max)
+
+// Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min)

@@ -1,0 +1,15 @@
+%nav.navbar.navbar-inverse.navbar-static-top
+  .container
+    .navbar-header
+      %a.navbar-brand Google
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          - if current_user
+            %a.dropdown-toggle.no-padding{href: '#', 'data-toggle' => "dropdown", 'role'=> "button", 'aria-haspopup'=>"true"}
+              %img.img-circle{:alt => "img",height: 30, width: 30, :src => image_path(current_user.avatar)}
+            %ul.dropdown-menu
+              %li
+                %a{href: '#'}
+                  %strong= current_user.name
+                = link_to "Sign out", signout_path, id: "sign_out"
